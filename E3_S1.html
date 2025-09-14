@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio - Diseño Mobile First</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 56px; /* Para fixed navbar */
+        }
+        
+        .navbar {
+            background-color: #2c3e50 !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+        }
+        
+        .skill-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card {
+            margin-bottom: 30px;
+            overflow: hidden;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .project-card img {
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Estilos específicos para móviles */
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar con menú hamburguesa -->
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">MiPortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold">Desarrollador Web Full Stack</h1>
+                    <p class="lead">Creo experiencias digitales excepcionales con las últimas tecnologías web.</p>
+                    <a href="contact.html" class="btn btn-light btn-lg mt-3">Contáctame</a>
+                </div>
+                <div class="col-md-6 d-none d-md-block">
+                    <img src="https://placehold.co/600x400/3498db/ffffff?text=Desarrollador+Web" alt="Desarrollador Web" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí (Resumen) -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="lead">Soy un apasionado desarrollador web con más de 5 años de experiencia creando soluciones digitales innovadoras.</p>
+                    <p>Mi expertise incluye HTML5, CSS3, JavaScript, React, Node.js y bases de datos SQL y NoSQL. Me especializo en crear aplicaciones web responsivas, rápidas y accesibles.</p>
+                    <p>Cuando no estoy codificando, me gusta aprender nuevas tecnologías, contribuir a proyectos open source y compartir conocimientos en comunidades de desarrolladores.</p>
+                    <a href="about.html" class="btn btn-primary mt-3">Más sobre mí</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card skill-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Mis habilidades</h5>
+                            <div class="mb-3">
+                                <span class="badge bg-primary me-1 mb-1">HTML5</span>
+                                <span class="badge bg-primary me-1 mb-1">CSS3</span>
+                                <span class="badge bg-primary me-1 mb-1">JavaScript</span>
+                                <span class="badge bg-primary me-1 mb-1">React</span>
+                                <span class="badge bg-primary me-1 mb-1">Node.js</span>
+                                <span class="badge bg-primary me-1 mb-1">MongoDB</span>
+                                <span class="badge bg-primary me-1 mb-1">Express</span>
+                                <span class="badge bg-primary me-1 mb-1">Bootstrap</span>
+                                <span class="badge bg-primary me-1 mb-1">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Destacados -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card">
+                        <img src="https://placehold.co/300x200/3498db/ffffff?text=E-commerce" class="card-img-top" alt="Proyecto E-commerce">
+                        <div class="card-body">
+                            <h5 class="card-title">Tienda Online</h5>
+                            <p class="card-text">Plataforma de e-commerce con carrito de compras y pasarela de pagos.</p>
+                            <a href="projects.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card">
+                        <img src="https://placehold.co/300x200/2c3e50/ffffff?text=Dashboard" class="card-img-top" alt="Proyecto Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Dashboard Analytics</h5>
+                            <p class="card-text">Sistema de visualización de datos con gráficos interactivos en tiempo real.</p>
+                            <a href="projects.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card">
+                        <img src="https://placehold.co/300x200/2980b9/ffffff?text=App+Móvil" class="card-img-top" alt="Proyecto App Móvil">
+                        <div class="card-body">
+                            <h5 class="card-title">App de Tareas</h5>
+                            <p class="card-text">Aplicación móvil para gestión de tareas con sincronización en la nube.</p>
+                            <a href="projects.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card project-card">
+                        <img src="https://placehold.co/300x200/34495e/ffffff?text=Blog" class="card-img-top" alt="Proyecto Blog">
+                        <div class="card-body">
+                            <h5 class="card-title">Blog Personal</h5>
+                            <p class="card-text">Blog con sistema de comentarios, categorías y panel de administración.</p>
+                            <a href="projects.html" class="btn btn-sm btn-outline-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="projects.html" class="btn btn-primary">Ver todos los proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Servicios</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-laptop-code fa-3x text-primary mb-3"></i>
+                        <h4>Desarrollo Web</h4>
+                        <p>Creación de sitios y aplicaciones web responsivas, modernas y optimizadas.</p>
+                        <a href="services.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+                        <h4>Diseño Responsive</h4>
+                        <p>Diseños adaptables que funcionan perfectamente en cualquier dispositivo.</p>
+                        <a href="services.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-search fa-3x text-primary mb-3"></i>
+                        <h4>SEO Optimization</h4>
+                        <p>Optimización para motores de búsqueda para mejorar el posicionamiento web.</p>
+                        <a href="services.html" class="btn btn-sm btn-outline-primary">Más info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-links mb-3">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2023 Mi Portfolio. Todos los derechos reservados.</p>
+            <p class="mb-0">
+                <a href="index.html" class="text-light me-3">Inicio</a>
+                <a href="about.html" class="text-light me-3">Sobre Mí</a>
+                <a href="projects.html" class="text-light me-3">Proyectos</a>
+                <a href="services.html" class="text-light me-3">Servicios</a>
+                <a href="contact.html" class="text-light">Contacto</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
